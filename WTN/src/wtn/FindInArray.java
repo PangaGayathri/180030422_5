@@ -2,11 +2,11 @@ package wtn;
 
 import java.util.Scanner;
 
-public class MaxAndMin {
+public class FindInArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int n,a[],min,max=0;
+		int n,a[],p,c=-1;
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter the size of array");
 		n=sc.nextInt();
@@ -15,19 +15,23 @@ public class MaxAndMin {
 		for(int i=0;i<n;i++)
 		{
 			a[i]=sc.nextInt();
-			if(a[i]>max)
-				max=a[i];
 		}
-		min=a[0];
+		System.out.println("Enter an element to find");
+		p=sc.nextInt();
 		for(int i=0;i<n;i++)
 		{
-			if(a[i]<min)
-				min=a[i];
+			if(a[i]==p)
+			{
+				c=i;
+				break;
+			}
 		}
-		System.out.println("Max element in the given array is "+max);
-		System.out.println("Min element in the given array is "+min);
-		
+		if(c!=-1)
+		System.out.println("Number is found at index "+c);
+		else
+			System.out.println(c);
 		sc.close();
+
 	}
 
 }

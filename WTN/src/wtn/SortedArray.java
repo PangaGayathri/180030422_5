@@ -2,11 +2,11 @@ package wtn;
 
 import java.util.Scanner;
 
-public class MaxAndMin {
+public class SortedArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int n,a[],min,max=0;
+		int n,a[],t;
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter the size of array");
 		n=sc.nextInt();
@@ -15,17 +15,24 @@ public class MaxAndMin {
 		for(int i=0;i<n;i++)
 		{
 			a[i]=sc.nextInt();
-			if(a[i]>max)
-				max=a[i];
 		}
-		min=a[0];
 		for(int i=0;i<n;i++)
 		{
-			if(a[i]<min)
-				min=a[i];
+			for(int j=i+1;j<n;j++)
+			{
+				if(a[j]<a[i])
+				{
+					t=a[i];
+					a[i]=a[j];
+					a[j]=t;
+				}
+			}
 		}
-		System.out.println("Max element in the given array is "+max);
-		System.out.println("Min element in the given array is "+min);
+		System.out.println("Sorted array: ");
+		for(int i=0;i<n;i++)
+		{
+			System.out.printf(a[i]+" ");
+		}
 		
 		sc.close();
 	}
