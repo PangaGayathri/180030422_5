@@ -1,0 +1,2 @@
+module wtn_practice {
+}
