@@ -1,6 +1,8 @@
 package wtn;
-import java.util.*;
-public class Integer {
+
+import java.util.Scanner;
+
+public class Intergertype {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
